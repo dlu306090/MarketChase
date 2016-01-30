@@ -26,14 +26,23 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index-bg.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        
         <title>MarketRush</title>
 
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/camera.js"></script>
+
+        
     </head>
     
-    <body style="background-image:url('img/startbgcircle.png'); background-repeat:no-repeat; background-size:100% 100%">
+    <body>
         <div class="app">
-            <a href="capture.html"> <h1 style="font-size:90px"> START </h1> </a>
+            <h1> Welcome to MarketRush! </h1>
+            <p> Riddle goes here. </p>
+            <button onclick="capturePhoto();">Take a picture of the answer!</button> <br>
+            <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+            <img style="display:none;" id="largeImage" src="" />
         </div>
     </body>
 
