@@ -1,4 +1,22 @@
-div { width: 100%; height: 20%; float: left; }
+a {
+	color: white;
+}
+
+@font-face {
+	font-family: 'GillSans';
+	src: url ('../font/GillSans-SemiBold.ttf') format('truetype');
+	font-weight: normal;
+    font-style: normal;
+}
+
+div { 
+	width: 100%; 
+	height: 20vh; 
+	float: left; 
+	color: white;
+	font-family: 'GillSans';
+}
+
 #div1 { background: #F04155; }
 #div2 { background: #FF823A; }
 #div3 { background: #F2F26F; }
