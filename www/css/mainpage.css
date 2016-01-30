@@ -5,12 +5,12 @@ a {
 
 @font-face {
     font-family: 'gill_sanssemibold';
-    src: url('gillsans-semibold-webfont.eot');
-    src: url('gillsans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('gillsans-semibold-webfont.woff2') format('woff2'),
-         url('gillsans-semibold-webfont.woff') format('woff'),
-         url('gillsans-semibold-webfont.ttf') format('truetype'),
-         url('gillsans-semibold-webfont.svg#gill_sanssemibold') format('svg');
+    src: url('../font/gillsans/gillsans-semibold-webfont.eot');
+    src: url('../font/gillsans/gillsans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/gillsans/gillsans-semibold-webfont.woff2') format('woff2'),
+         url('../font/gillsans/gillsans-semibold-webfont.woff') format('woff'),
+         url('../font/gillsans/gillsans-semibold-webfont.ttf') format('truetype'),
+         url('../font/gillsans/gillsans-semibold-webfont.svg#gill_sanssemibold') format('svg');
     font-weight: normal;
     font-style: normal;
 
