@@ -1,0 +1,32 @@
+#magnifying {
+ position: absolute;
+ left: 40%;
+ top: 90%;
+
+ /* vendor prefix code?? */
+
+ -webkit-animation: myOrbit 2s linear infinite;
+    -moz-animation: myOrbit 2s linear infinite;
+      -o-animation: myOrbit 2s linear infinite;
+         animation: myOrbit 2s linear infinite;
+}
+
+@-webkit-keyframes myOrbit {
+ from { -webkit-transform: rotate(0deg) translateX(70px) rotate(0deg);}
+ to { -webkit-transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+}
+
+@-moz-keyframes myOrbit {
+   from { -moz-transform: rotate(0deg) translateX(70px) rotate(0deg); }
+   to   { -moz-transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+}
+
+@-o-keyframes myOrbit {
+   from { -o-transform: rotate(0deg) translateX(70px) rotate(0deg); }
+   to   { -o-transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+}
+
+@keyframes myOrbit {
+   from { transform: rotate(0deg) translateX(70px) rotate(0deg); }
+   to   { transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+}
