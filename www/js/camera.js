@@ -12,16 +12,26 @@ function onDeviceReady() {
 //
 function onPhotoDataSuccess(imageData) {
  
-  var smallImage = document.getElementById('smallImage');
+var http = new XMLHttpRequest();
+var url = "https://api.havenondemand.com/1/api/sync/recognizebarcodes/v1";
+var params = "apikey=9c72a5ef-92e5-4619-a875-81ad3d1974b7&file="+imageData;
+http.open("POST", url, true);
 
-  // Unhide image elements
-  //
-  smallImage.style.display = 'block';
+//Send the proper header information along with the request
+http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+http.setRequestHeader("Content-length", params.length);
+http.setRequestHeader("Connection", "close");
 
-  // Show the captured photo
-  // The in-line CSS rules are used to resize the image
-  //
-  smallImage.src = "data:image/jpeg;base64," + imageData;
+http.onreadystatechange = function() {//Call a function when the state changes.
+    if(http.readyState == 4 && http.status == 200) {
+        alert(http.responseText);
+        if (http.responseText.barcode[0]["text"] == "036000291452")
+          var smallImage = document.getElementById('smallImage');
+          smallImage.style.display = 'block';
+          smallImage.src = "data:image/jpeg;base64," + imageData;
+    }
+}
+http.send(params);
 }
 
 // Called when a photo is successfully retrieved

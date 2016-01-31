@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/mainpage.css" />
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/camera.js"></script>
 </head>
 <body>
-	<a href="">
+	<a onclick="capturePhoto();">
     	<div id= "div1">
         	<p> 1. Protects your hands when you wash dishes. </p>
     	</div>
 	</a>
-	<a href="">
+    <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+	<a onclick="capturePhoto();">
 	    <div id= "div2">
     	    <p> 2. Spongebob lives inside this fruit. </p>
 	    </div>
 	</a>
-	<a href="">
+	<a onclick="capturePhoto();">
 	    <div id= "div3">
 	        <p> 3. Cutting this vegetable might make you cry! </p>
 	    </div>
