@@ -14,7 +14,7 @@ function onPhotoDataSuccess(imageData) {
  
 var http = new XMLHttpRequest();
 var url = "https://api.havenondemand.com/1/api/sync/recognizebarcodes/v1";
-var params = "apikey=9c72a5ef-92e5-4619-a875-81ad3d1974b7&file="+imageData;
+var params = "apikey=9c72a5ef-92e5-4619-a875-81ad3d1974b7&file="+"data:image/jpeg;base64,"+imageData;
 http.open("POST", url, true);
 
 //Send the proper header information along with the request
@@ -25,7 +25,8 @@ http.setRequestHeader("Connection", "close");
 http.onreadystatechange = function() {//Call a function when the state changes.
     if(http.readyState == 4 && http.status == 200) {
         alert(http.responseText);
-        if (http.responseText.barcode[0]["text"] == "036000291452")
+        document.getElementById('div1').innerHTML = http.responseText;
+        if (http.responseText.barcode[0]["text"] != "0")
           var smallImage = document.getElementById('smallImage');
           smallImage.style.display = 'block';
           smallImage.src = "data:image/jpeg;base64," + imageData;
