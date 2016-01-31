@@ -14,9 +14,7 @@ function onPhotoDataSuccess(imageData) {
  
 var http = new XMLHttpRequest();
 var url = "https://upload.gyazo.com/api/upload";
-var url2 = imageData.replace("/:/g", "%3A");
-var url2 = url2.replace("/\//g", "%2F");
-var params = "apikey=9c72a5ef-92e5-4619-a875-81ad3d1974b7&url="+url2;
+var params = "apikey=9c72a5ef-92e5-4619-a875-81ad3d1974b7&url="+encodeURIComponent(imageData);
 alert(params);
 http.open("POST", url, true);
 
@@ -27,7 +25,7 @@ http.setRequestHeader("Connection", "close");
 
 http.onreadystatechange = function() {//Call a function when the state changes.
     if(http.readyState == 4 && http.status == 200) {
-        alert(url2);
+        alert(http.responseText);
         document.getElementById('div1').innerHTML = http.responseText;
         if (http.responseText.barcode[0]["text"] != "0")
           var smallImage = document.getElementById('smallImage');
